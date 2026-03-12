@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八字深度解讀｜己土女命·癸未生</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body {
+  background:#000000 !important;
+  background-color:#000000 !important;
+  color:#ffffff;
+  font-family:'Noto Serif TC',serif;
+  overflow-x:hidden;
+  position:relative;
+}
+body::before {
+  content:''; position:fixed; inset:0;
+  background-image:
+    radial-gradient(ellipse at 20% 45%, rgba(100,160,80,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 78% 25%, rgba(201,168,76,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 55% 82%, rgba(80,140,100,0.05) 0%, transparent 50%);
+  pointer-events:none; z-index:0;
+}
+body::after {
+  content:''; position:fixed; inset:-200%;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.35; pointer-events:none; z-index:1;
+  animation:grain 0.5s steps(1) infinite;
+}
+@keyframes grain {
+  0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,2%)}
+  30%{transform:translate(-1%,4%)}40%{transform:translate(2%,-1%)}50%{transform:translate(-3%,2%)}
+  60%{transform:translate(1%,-2%)}70%{transform:translate(3%,3%)}80%{transform:translate(-2%,1%)}90%{transform:translate(1%,-3%)}
+}
+
+.container { position:relative; z-index:2; max-width:900px; margin:0 auto; padding:0 24px 80px; }
+
+/* ══ HERO ══ */
+.hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; padding:60px 0; }
+.hero-emblem {
+font-family:‘Ma Shan Zheng’,cursive;
+font-size:clamp(6rem,15vw,12rem);
+color:#C9A84C;
+line-height:1;
+text-shadow:0 0 60px rgba(201,168,76,0.6),0 0 120px rgba(201,168,76,0.28);
+animation:pulse-earth 4s ease-in-out infinite;
+margin-bottom:16px;
+}
+@keyframes pulse-earth {
+0%,100%{text-shadow:0 0 60px rgba(201,168,76,0.6),0 0 120px rgba(201,168,76,0.28)}
+50%{text-shadow:0 0 90px rgba(201,168,76,0.8),0 0 180px rgba(212,168,60,0.35)}
+}
+.hero-subtitle { font-family:‘Noto Sans TC’,sans-serif; font-size:0.75rem; letter-spacing:0.5em; color:#C9A84C; margin-bottom:32px; }
+
+.four-pillars { display:flex; gap:2px; margin:32px 0; }
+.pillar {
+display:flex; flex-direction:column; align-items:center;
+background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.22);
+padding:20px 16px; position:relative; overflow:hidden;
+transition:all 0.4s ease; min-width:80px; cursor:default;
+}
+.pillar:hover { border-color:rgba(201,168,76,0.55); transform:translateY(-4px); }
+.pillar-label { font-size:0.6rem; letter-spacing:0.3em; color:#aaaaaa; margin-bottom:12px; font-family:‘Noto Sans TC’,sans-serif; }
+.pillar-tg { font-family:‘Ma Shan Zheng’,cursive; font-size:2.2rem; line-height:1; margin-bottom:4px; }
+.pillar-dz { font-family:‘Ma Shan Zheng’,cursive; font-size:2.2rem; line-height:1; }
+.pillar-ten-god { font-size:0.65rem; color:#aaaaaa; margin-top:10px; font-family:‘Noto Sans TC’,sans-serif; }
+
+.fire-c  { color:#F07840; }
+.earth-c { color:#C9A84C; }
+.metal-c { color:#C8C8D8; }
+.wood-c  { color:#7AB860; }
+.water-c { color:#63B3ED; }
+
+.hero-desc { font-size:0.95rem; color:rgba(255,255,255,0.6); line-height:2; max-width:520px; font-weight:300; }
+.scroll-hint {
+position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+display:flex; flex-direction:column; align-items:center; gap:8px;
+color:#aaaaaa; font-size:0.65rem; letter-spacing:0.3em;
+font-family:‘Noto Sans TC’,sans-serif; animation:bounce 2s ease-in-out infinite;
+}
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+.scroll-hint::after { content:’’; width:1px; height:40px; background:linear-gradient(180deg,#aaaaaa,transparent); }
+
+/* ══ SECTIONS ══ */
+.section { padding:80px 0; border-top:1px solid rgba(201,168,76,0.1); }
+.section-header { display:flex; align-items:baseline; gap:20px; margin-bottom:48px; }
+.section-num { font-family:‘Ma Shan Zheng’,cursive; font-size:3rem; color:#7AB860; opacity:0.5; line-height:1; }
+.section-title { font-size:1.5rem; font-weight:600; color:#C9A84C; letter-spacing:0.1em; }
+.section-subtitle { font-size:0.75rem; color:#aaaaaa; letter-spacing:0.3em; font-family:‘Noto Sans TC’,sans-serif; margin-top:4px; }
+
+/* ══ CARDS ══ */
+.card { background:rgba(255,255,255,0.02); border:1px solid rgba(201,168,76,0.15); padding:28px 32px; margin-bottom:20px; position:relative; overflow:hidden; }
+.card::before { content:’’; position:absolute; left:0; top:0; bottom:0; width:3px; background:#7AB860; }
+.card-title { font-size:1rem; color:#C9A84C; font-weight:600; margin-bottom:14px; letter-spacing:0.05em; display:flex; align-items:center; gap:10px; }
+.card-title::before { content:‘◆’; font-size:0.5rem; color:#7AB860; }
+.card p { font-size:0.9rem; line-height:2; color:#ffffff; font-weight:300; }
+.card p + p { margin-top:12px; }
+
+.highlight { background:rgba(122,184,96,0.08); border:1px solid rgba(122,184,96,0.32); padding:16px 20px; margin:16px 0; font-size:0.88rem; line-height:1.9; color:#ffffff; }
+.highlight-gold { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.3); padding:16px 20px; margin:16px 0; font-size:0.88rem; line-height:1.9; color:#ffffff; }
+.highlight-warn { background:rgba(212,98,42,0.09); border:1px solid rgba(212,98,42,0.35); padding:16px 20px; margin:16px 0; font-size:0.88rem; line-height:1.9; color:#ffffff; }
+.highlight-special { background:rgba(80,100,200,0.09); border:1px solid rgba(120,140,240,0.35); padding:16px 20px; margin:16px 0; font-size:0.88rem; line-height:1.9; color:#ffffff; }
+.analogy { background:rgba(74,140,110,0.08); border-left:3px solid #4A8C6E; padding:16px 20px; margin:16px 0; font-size:0.88rem; line-height:1.9; color:#eeeeee; font-style:italic; }
+.analogy::before { content:‘🌿 白話翻譯｜’; font-style:normal; color:#4A8C6E; font-size:0.8rem; letter-spacing:0.1em; }
+
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+/* ══ YUNLIU ══ */
+.yunliu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:12px; margin-top:24px; }
+.yun-card { background:rgba(255,255,255,0.02); border:1px solid rgba(201,168,76,0.12); padding:18px 16px; position:relative; transition:all 0.3s; }
+.yun-card:hover { border-color:rgba(201,168,76,0.38); background:rgba(255,255,255,0.05); transform:translateY(-2px); }
+.yun-card.active { border-color:#7AB860; background:rgba(122,184,96,0.07); }
+.yun-card.active::after { content:‘▶ 當前’; position:absolute; top:8px; right:10px; font-size:0.6rem; color:#7AB860; font-family:‘Noto Sans TC’,sans-serif; }
+.yun-age { font-size:0.65rem; color:#aaaaaa; margin-bottom:6px; font-family:‘Noto Sans TC’,sans-serif; letter-spacing:0.15em; }
+.yun-stem { font-family:‘Ma Shan Zheng’,cursive; font-size:1.8rem; line-height:1; color:#ffffff; }
+.yun-desc { font-size:0.72rem; color:#bbbbbb; margin-top:8px; line-height:1.6; font-family:‘Noto Sans TC’,sans-serif; }
+
+/* ══ SHENSHA ══ */
+.shensha-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.shensha-item { border:1px solid rgba(201,168,76,0.15); padding:18px 20px; background:rgba(255,255,255,0.02); }
+.shensha-name { font-size:1.1rem; color:#C9A84C; font-weight:600; margin-bottom:8px; }
+.shensha-desc { font-size:0.82rem; color:#dddddd; line-height:1.8; font-family:‘Noto Sans TC’,sans-serif; font-weight:300; }
+
+/* ══ BONE ══ */
+.bone-display { display:flex; align-items:center; gap:40px; padding:40px; background:rgba(201,168,76,0.04); border:1px solid rgba(201,168,76,0.2); margin:24px 0; }
+.bone-num { font-family:‘Ma Shan Zheng’,cursive; font-size:5rem; color:#C9A84C; line-height:1; text-shadow:0 0 30px rgba(201,168,76,0.3); }
+.bone-unit { font-size:1.2rem; color:#aaaaaa; }
+.bone-text { flex:1; }
+.bone-text p { font-size:0.88rem; line-height:2; color:#dddddd; font-weight:300; }
+
+/* ══ WARNING / OPPO ══ */
+.warning-box { background:rgba(212,98,42,0.07); border:1px solid rgba(212,98,42,0.38); padding:28px 32px; margin:16px 0; }
+.warning-box h3 { color:#F07840; font-size:1.1rem; margin-bottom:14px; letter-spacing:0.1em; }
+.warning-box ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.warning-box ul li { font-size:0.88rem; line-height:1.8; color:#ffffff; font-weight:300; padding-left:20px; position:relative; }
+.warning-box ul li::before { content:‘▸’; position:absolute; left:0; color:#D4622A; }
+.oppo-box { background:rgba(74,140,110,0.07); border:1px solid rgba(74,140,110,0.38); padding:28px 32px; margin:16px 0; }
+.oppo-box h3 { color:#6EC49A; font-size:1.1rem; margin-bottom:14px; letter-spacing:0.1em; }
+.oppo-box ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.oppo-box ul li { font-size:0.88rem; line-height:1.8; color:#ffffff; font-weight:300; padding-left:20px; position:relative; }
+.oppo-box ul li::before { content:‘▸’; position:absolute; left:0; color:#6EC49A; }
+
+/* ══ VERDICT ══ */
+.verdict { text-align:center; padding:80px 40px; border-top:1px solid rgba(201,168,76,0.2); }
+.verdict-main {
+font-family:‘Ma Shan Zheng’,cursive; font-size:clamp(4rem,10vw,7rem);
+color:transparent;
+background:linear-gradient(135deg,#4A8C6E 0%,#7AB860 45%,#C9A84C 100%);
+-webkit-background-clip:text; background-clip:text; line-height:1; margin-bottom:24px;
+animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.2)} }
+.verdict-text { font-size:1rem; line-height:2.2; color:rgba(255,255,255,0.8); max-width:640px; margin:0 auto 32px; font-weight:300; }
+.verdict-seal { display:inline-block; border:2px solid #7AB860; padding:10px 28px; font-family:‘Ma Shan Zheng’,cursive; font-size:1.2rem; color:#7AB860; letter-spacing:0.3em; text-shadow:0 0 20px rgba(122,184,96,0.4); }
+
+/* ══ MISC ══ */
+.divider { display:flex; align-items:center; gap:20px; margin:40px 0; opacity:0.3; }
+.divider::before,.divider::after { content:’’; flex:1; height:1px; background:#C9A84C; }
+.divider span { font-family:‘Ma Shan Zheng’,cursive; font-size:1.2rem; color:#C9A84C; }
+.quote { border-left:2px solid #7AB860; padding:12px 20px; margin:20px 0; font-size:0.85rem; color:#bbbbbb; font-style:italic; line-height:1.8; }
+.quote cite { display:block; margin-top:8px; font-size:0.75rem; color:#aaaaaa; font-style:normal; letter-spacing:0.1em; }
+.interaction-table { width:100%; border-collapse:collapse; font-size:0.82rem; font-family:‘Noto Sans TC’,sans-serif; }
+.interaction-table th { padding:10px 16px; text-align:left; background:rgba(201,168,76,0.08); color:#C9A84C; font-weight:500; letter-spacing:0.1em; border-bottom:1px solid rgba(201,168,76,0.2); }
+.interaction-table td { padding:12px 16px; border-bottom:1px solid rgba(201,168,76,0.06); color:#dddddd; line-height:1.7; vertical-align:top; }
+.interaction-table tr:hover td { background:rgba(255,255,255,0.02); }
+.tag { display:inline-block; padding:3px 10px; font-size:0.7rem; border-radius:2px; font-family:‘Noto Sans TC’,sans-serif; margin:2px; }
+.tag-fire  { background:rgba(212,98,42,0.2);  color:#F07840; border:1px solid rgba(212,98,42,0.4); }
+.tag-earth { background:rgba(180,145,70,0.2);  color:#C9A84C; border:1px solid rgba(180,145,70,0.4); }
+.tag-metal { background:rgba(180,165,130,0.2); color:#D4C5A0; border:1px solid rgba(180,165,130,0.4); }
+.tag-wood  { background:rgba(92,140,62,0.2);   color:#9BC46A; border:1px solid rgba(92,140,62,0.4); }
+.tag-water { background:rgba(43,95,140,0.2);   color:#7BB8E8; border:1px solid rgba(43,95,140,0.4); }
+
+@media(max-width:640px){
+.grid-2{grid-template-columns:1fr;}
+.four-pillars{gap:1px;}
+.pillar{padding:14px 10px;min-width:60px;}
+.pillar-tg,.pillar-dz{font-size:1.8rem;}
+.shensha-grid{grid-template-columns:1fr;}
+.bone-display{flex-direction:column;gap:16px;text-align:center;}
+.section-num{font-size:2rem;}
+.section-title{font-size:1.2rem;}
+}
+</style>
+
+</head>
+<body style="background:#000000 !important;background-color:#000000 !important;">
+<div class="container">
+
+<!-- ════ HERO ════ -->
+
+<section class="hero">
+  <div class="hero-emblem">己</div>
+  <div class="hero-subtitle">庚辰 癸未 己巳 戊辰｜己土女命·癸未生深度解讀</div>
+
+  <div class="four-pillars">
+    <div class="pillar">
+      <div class="pillar-label">年柱</div>
+      <div class="pillar-tg metal-c">庚</div>
+      <div class="pillar-dz earth-c">辰</div>
+      <div class="pillar-ten-god">傷官</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-label">月柱</div>
+      <div class="pillar-tg water-c">癸</div>
+      <div class="pillar-dz earth-c">未</div>
+      <div class="pillar-ten-god">偏財</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-label">日柱</div>
+      <div class="pillar-tg earth-c">己</div>
+      <div class="pillar-dz fire-c">巳</div>
+      <div class="pillar-ten-god">日主</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-label">時柱</div>
+      <div class="pillar-tg earth-c">戊</div>
+      <div class="pillar-dz earth-c">辰</div>
+      <div class="pillar-ten-god">劫財</div>
+    </div>
+  </div>
+
+  <div class="hero-desc">
+    納音：白蠟金・楊柳木・大林木・大林木<br>
+    地勢：衰・冠帶・帝旺・衰<br>
+    骨重 <strong style="color:#C9A84C">4兩5錢</strong>｜起運 <strong style="color:#C9A84C">1年0月</strong>
+  </div>
+  <div class="scroll-hint">向下探索</div>
+</section>
+
+<!-- ════ 壹：格局鑑定 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">壹</div>
+    <div>
+      <div class="section-title">格局鑑定</div>
+      <div class="section-subtitle">FORMAT · STRENGTH · YONGSHENG</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">格局判定：偏財格（月令癸水偏財透干）</div>
+    <p>月柱癸未，天干透出癸水——癸為己土之偏財，依《子平真詮》「以月令透干定格」原則，<strong style="color:#E8C96B;">偏財格</strong>成立。偏財格的核心意象：機會型資源觀、靈活的人脈財、與父親或男性長輩的特殊緣分、以及對外部世界敏銳的嗅覺。</p>
+    <p>《三命通會》：「偏財者，我克者也，陽見陰，陰見陽，主豪爽好施，交遊廣闊，善於把握機遇。」月令偏財透干，格局清晰，代表你天生就有「發現機會、運用資源」的直覺能力。</p>
+    <div class="analogy">你的命盤設定，天生就是那種「走進一個房間，五分鐘就知道誰是關鍵人物、什麼是機會所在」的人。這不是算計，是你的感知天線特別靈敏。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">身強身弱判斷：身強偏旺（火土並強，印比皆厚）</div>
+    <p><strong style="color:#E8C96B;">助旺日主的力量：</strong>日支巳火（帝旺），巳中藏丙火為正印，直接生己土日主；時干戊土劫財透干，同類助身；時支辰土、年支辰土均為土，土氣厚重；月支未土亦為比肩（同為土），藏干有己土比肩。四柱土氣佔據極大比重，印比雙旺，日主<strong style="color:#F07840;">身強</strong>。</p>
+    <p><strong style="color:#E8C96B;">泄耗日主：</strong>年干庚金傷官泄身，月干癸水偏財洩耗（土生金生水），形成傷官生財的自然流通結構。年支辰、時支辰為水庫，藏癸水，財星有根。整體格局：身強財旺，傷官生財，能量流向清晰。</p>
+    <div class="highlight">
+      <strong>綜合判斷：</strong>身強偏財格，傷官生財格局——日主旺而有泄，結構自洽。用神首選：癸壬水（財星流通）、庚辛金（傷官泄身生財）。忌神：丙丁火（正偏印助旺日主）、戊己土（比劫再旺）。
+    </div>
+    <div class="analogy">你就像一片特別肥沃的農田（身強土旺），同時有一條天然的灌溉水渠（偏財格）。這塊田不缺養分，缺的是讓養分「流動起來」的管道。你的一生，最重要的事是讓能量流動——流動就是財富，停滯就是瓶頸。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">調候用神 vs 扶抑用神</div>
+    <p><strong style="color:#E8C96B;">調候：</strong>己生未月（小暑至立秋），盛夏之土，燥熱極甚。《窮通寶鑒》未月己土：「先癸後丙，無癸用丙。」此命癸水偏財月干透出，調候用神已到位——癸水滋潤燥土，是整個命盤最重要的能量平衡點。大運流年逢水旺，人生有明顯的舒暢與開展。</p>
+    <p><strong style="color:#E8C96B;">扶抑：</strong>身強宜泄宜洩，用神傷官（庚辛金）泄身、財星（壬癸水）流通。庚金傷官生財，是命盤最自然的能量出口，也是你賺錢最順暢的路徑。忌：再見火土，助旺過盛。</p>
+    <div class="highlight-gold">
+      <strong>用神序列：</strong>壬癸亥子水（第一喜，調候＋偏財）→ 庚辛申酉金（第二喜，傷官泄身生財）→ 甲乙寅卯木（第三喜，七殺制旺適量）<br>
+      <strong>忌神序列：</strong>丙丁午火（最忌，正印助旺）→ 戊己辰丑土（次忌，比劫再助）
+    </div>
+    <div class="analogy">你的命盤最需要「水」和「流動」。水是你的財星，也是你的調候神。不管是真實的水（多喝水、接近水邊環境），還是比喻的水（讓錢流動、讓資訊流動、讓人脈流動），都是你生命能量的補給站。</div>
+  </div>
+
+  <div class="quote">
+    「己土卑濕，中正蓄藏；不愁木盛，不畏水狂；火少火晦，金多金光。」<br>
+    <cite>——《滴天髓》論己土</cite>
+  </div>
+</section>
+
+<!-- ════ 貳：十神心理原型 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">貳</div>
+    <div>
+      <div class="section-title">十神心理原型對照</div>
+      <div class="section-subtitle">ARCHETYPE · PSYCHOLOGY · PERSONALITY</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">偏財（月干癸水）——命盤主旋律：機會嗅覺者</div>
+    <p>偏財是格局所在，也是最核心的心理底色。偏財原型：<strong style="color:#E8C96B;">機會財、人脈財、靈活的資源掌控者</strong>——對外部世界的機會有天然的敏銳度，善於整合資源，人際關係廣闊，財來財去不執著於固定模式。</p>
+    <p>月干透偏財的女命，往往有很強的獨立財務意識，不依賴他人養活自己的欲望極強。同時，偏財代表父親緣——月干偏財，父親在你的成長過程中是一個重要的財務與世界觀的影響來源，可能是你最早的「機會意識」的啟蒙者。</p>
+    <div class="analogy">你天生就是那種「知道怎麼把資源連結在一起」的人。不是投機，是眼光。你很早就理解了「世界是靠關係和機會運轉的」，這個理解是你最強的競爭力。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">傷官（年干庚金）——才華倒逼改革的內在引擎</div>
+    <p>年干庚金傷官，是命盤中最耀眼的才華符號。傷官原型：<strong style="color:#E8C96B;">批判性思維者、改革的衝動、不按常規出牌的創造力</strong>。年干傷官說明從小（0-15歲）這股「我要打破現有框架」的衝動就已存在，是你最早建立個人風格的能量來源。</p>
+    <p>傷官生財（庚金生癸水）——你的才華批判力，最終指向的是財富的流通與創造，而非單純的反叛。這是命盤結構中最精彩的組合：有鋒芒，有方向，不是為了叛逆而叛逆，而是為了「讓事情變得更好」。</p>
+    <div class="analogy">你不是那種「照著別人說的做」的人，你是那種「我知道這樣做可以更好」然後真的去改變它的人。你的批判不是抱怨，是行動力——這是你最值錢的才能。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">劫財（時干戊土）——自我主張的晚年底色</div>
+    <p>時干戊土劫財，進入晚年（46歲後）自我意識更加鮮明。劫財原型：<strong style="color:#E8C96B;">同儕競爭意識、強烈的自我主張</strong>——你不是那種隨波逐流的人，在資源競爭的場合，你有清晰的「我要」和「我不要」的邊界感。</p>
+    <p>然劫財對偏財格是忌神方向（比劫奪財），意味著晚年需要注意：不要讓過強的自我主張影響財務決策，以及謹慎處理因「強勢」帶來的人際摩擦。</p>
+    <div class="analogy">時干劫財的你，46歲後會越來越清楚「我要的是什麼」，對不想要的東西也會越來越直接說不。這很好，但同時要留意：過於強硬有時候會讓本來可以合作的機會白白流走。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">正印（日支巳藏丙火）——深層安全感的秘密來源</div>
+    <p>日支巳火藏丙火（正印），正印能量藏於最私密的伴侶宮。正印原型：<strong style="color:#E8C96B;">學習型安全感、被保護的渴望</strong>——你在親密關係中，需要的不只是物質的穩定，而是一種「被理解、被認可、被呵護」的情感質地。</p>
+    <p>然正印（巳中丙火）是忌神，說明這種「被保護的渴望」若過度依賴，反而會讓你的身強能量變得沉滯。最健康的狀態是：從自己內部建立安全感，而不是從伴侶或外部認可中尋找。</p>
+    <div class="analogy">你骨子裡有一個很溫柔的聲音，渴望被真正看見和理解。這個聲音通常被你強大的外表蓋住了，只有最親密的人才會看到。那個渴望被看見的自己，不需要藏著——讓值得的人看見，是你的福氣，不是弱點。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">七殺（辰未藏乙木，月支未藏乙）——壓制轉化的突破能量</div>
+    <p>七殺藏於多個地支之中（辰藏乙、未藏乙），七殺能量廣泛存在但未透天干，屬於「暗殺」格局——壓力真實存在，但不是最主要的命盤能量。七殺原型：<strong style="color:#E8C96B;">危機中的突破本能</strong>——你在真正高壓的情況下，反而能激發出超乎尋常的應對能力。</p>
+    <div class="analogy">七殺就藏在你的地基裡——平時看不見，但當真正的壓力來臨時，你的危機應對本能會自動啟動，讓旁人大吃一驚。這是你的底牌，不需要常常亮出來，但永遠在那裡。</div>
+  </div>
+</section>
+
+<!-- ════ 叁：宮位映射 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">叁</div>
+    <div>
+      <div class="section-title">宮位生活映射</div>
+      <div class="section-subtitle">PILLARS · LIFE STAGES · ENVIRONMENT</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">年柱 庚辰｜0–15歲·原生家庭</div>
+    <p><strong style="color:#E8C96B;">庚金傷官坐辰土（衰地）：</strong>傷官在年柱，說明你從小就展現出非同一般的個性與批判性——你是那種從小就有自己想法、不容易被傳統說法說服的孩子。庚金在辰為衰地，但辰土厚重，有根可依，傷官能量是穩定輸出的。</p>
+    <p>辰土藏壬水（七殺）、乙木（七殺）、戊土（劫財）：原生家庭藏有複雜的能量——有管控（七殺）、有競爭（劫財），家族中可能有強勢的長輩或激烈的兄弟姊妹競爭格局。納音白蠟金：精緻的金，暗示家族有追求品質的文化底色，你從小就有對「好東西」的鑑別能力。</p>
+    <div class="analogy">你的童年大概是「大人說的話你不一定買單，你有自己的判斷」那種孩子。可能讓父母又愛又頭疼。但那個從小就有想法的你，正是你後來最強的競爭力的起點。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">月柱 癸未｜16–30歲·社會化與職業</div>
+    <p><strong style="color:#E8C96B;">癸水偏財坐未土（冠帶）：</strong>月令主格局，偏財在月柱透干且得冠帶之地——青年期（16-30歲）是你財務意識與人脈能力快速成形的關鍵時段。冠帶是「初入社會、建立形象」的地勢，偏財坐冠帶，意味著你在這段時期特別善於建立有效的社會連結。</p>
+    <p>未土藏己土（比肩）、丁火（偏印）、乙木（七殺）：月支藏干豐富，說明這段時期你同時在多個層面成長——職業認同（比肩）、學習積累（偏印）、與壓力對抗（七殺）並行。納音楊柳木：柔而有韌，這段時期你學會了「在複雜環境中保持靈活」。</p>
+    <div class="analogy">16到30歲是你建立「人脈地圖」的時期。你天生知道怎麼和不同的人打交道，這段時間認識的人、累積的關係，會在往後人生的關鍵時刻一再發揮作用。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">日柱 己巳｜31–45歲·自我與伴侶</div>
+    <p><strong style="color:#E8C96B;">己坐巳，帝旺之地：</strong>日主在日支得帝旺，31-45歲是你能量最飽滿、磁場最強烈的人生階段。巳火正印生身，你在這個時期同時有「被保護的安全感」和「能量極旺的主導力」，是你一生中最像自己的時段。</p>
+    <p>日支巳藏丙（正印）、庚（傷官）、戊（劫財）：伴侶宮能量豐富，感情中你展現的是「有保護欲的溫柔、有標準的品質感、有主見的獨立性」——這個組合令人著迷，也容易讓伴侶感到壓力。你需要的是一個「跟得上你」的伴侶，而不是一個讓你「等待」的人。</p>
+    <div class="highlight-gold">
+      納音大林木：大樹之木，日柱坐大林木，這段時期你是真正「頂天立地」的大樹——事業、關係、自我意識都在這裡成熟。
+    </div>
+    <div class="analogy">31到45歲，是你這棵大樹最茂盛的時期。你的氣場、你的判斷力、你對機會的嗅覺，全部在這段時間達到頂峰。感情上，你需要一個能和你並排站在陽光下的人，而不是躲在你樹蔭下的人。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">時柱 戊辰｜46歲後·晚年與子息</div>
+    <p><strong style="color:#E8C96B;">戊土劫財坐辰（衰地）：</strong>時干戊土劫財，晚年自我主張鮮明；辰土為水庫，藏壬水（正財）——時柱的水庫暗示晚年有積累的財務資源在庫，能夠做到「藏富於身」。辰雖為衰地，但辰土本身厚重，根氣不失。</p>
+    <p>時支辰與年支辰伏吟：年柱（童年）與時柱（晚年）地支相同，形成首尾呼應——你晚年思考的問題，很可能是童年就埋下種子的議題；同時，晚年的生活狀態與原生家庭的某些模式也有深刻的內在連結。</p>
+    <div class="analogy">你的晚年會是那種「財不外露但心裡有底」的狀態。不是吝嗇，是智慧——你知道什麼該投，什麼該留，什麼時候展示，什麼時候低調。這種財務智慧，是你一輩子歷練的結晶。</div>
+  </div>
+
+  <div class="divider"><span>刑沖合害</span></div>
+
+  <div class="card">
+    <div class="card-title">宮位間互動——刑沖合害具象化</div>
+    <table class="interaction-table">
+      <tr>
+        <th>互動</th>
+        <th>宮位</th>
+        <th>生活具象</th>
+      </tr>
+      <tr>
+        <td><span class="tag tag-earth">辰辰自刑</span></td>
+        <td>年支 vs 時支</td>
+        <td>年支辰與時支辰相同，構成自刑。辰土自刑：原生家庭（年支）與晚年環境（時支）之間，存在某種「重複的模式」——你可能在不知不覺中，在晚年的生活中複製了早年的某些人際或財務模式。覺察這個重複，是打破循環的第一步。</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-earth">辰未相穿（六害）</span></td>
+        <td>年支時支 vs 月支</td>
+        <td>辰土與未土六害，暗中耗損。年支辰（年柱根氣）、時支辰（晚年根基）被月支未土（格局核心）暗中消耗——你的財運核心（偏財格，月支未）與早年和晚年的根基之間，存在長期的暗耗。財來財去的流動感強，但留存率需要有意識地管理。</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-fire">巳辰相鄰無沖</span></td>
+        <td>日支 vs 時支</td>
+        <td>日支巳火與時支辰土相鄰，巳火生辰土，日柱（自我能量）自然流入時柱（晚年），是一種「中年積累自然延伸到晚年」的順暢格局。你不會有「中年之後突然失去方向」的斷層感，能量延續性強。</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-wood">未中乙木七殺</span></td>
+        <td>月支藏干</td>
+        <td>月支未中藏乙木七殺，青年期（16-30歲）有來自環境的壓力與挑戰——可能是強勢的教育環境、競爭激烈的職場早期、或某段讓你感到被壓制的關係。七殺未透干，是暗壓力，驅使你在不知不覺中磨礪出應對逆境的能力。</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ════ 肆：天干地支互動 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">肆</div>
+    <div>
+      <div class="section-title">天干地支互動分析</div>
+      <div class="section-subtitle">STEMS · BRANCHES · INTERACTION</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">天干：庚癸己戊的能量鏈</div>
+      <p><strong style="color:#E8C96B;">傷官生財（庚→癸）：</strong>年干庚金傷官生月干癸水偏財，天干形成最完美的財務能量鏈——才華直接轉化為資源。《子平真詮》：「傷官生財，財源廣進，最為秀氣流通。」這是命盤中最強的正面能量流，代表你的批判性才華是你最直接的賺錢工具。</p>
+      <p><strong style="color:#F07840;">戊癸合化（劫財合偏財）：</strong>時干戊土與月干癸水天干相合——劫財與偏財相合，暗示晚年（時柱主導後）容易有「財被自我主張耗散」的傾向。戊癸合而化火，火為忌神，這個合化方向值得警惕。</p>
+      <div class="analogy">你的天干能量鏈是：批判力（庚）→賺錢（癸）→自我（己）→晚年主張（戊）。前半段是加速器，後半段要注意不要因為太有主見而讓好機會從手邊溜走。</div>
+    </div>
+
+```
+<div class="card">
+  <div class="card-title">地支：辰酉六合（逢酉年引動）</div>
+  <p><strong style="color:#E8C96B;">辰酉六合金（逢酉引動）：</strong>年支辰與時支辰，逢酉年或酉大運時，辰酉六合金局被引動——金為傷官，合化金可大力強化命盤傷官生財的能量流。逢酉年（庚酉、辛酉），是命盤財運最暢通的年份之一。</p>
+  <p><strong style="color:#E8C96B;">未戌相刑（逢戌引動）：</strong>月支未與戌（逢戌運或戌年）構成丑未戌三刑之一角——月令偏財宮位受刑，財務或人際關係有動盪的可能。需在戌年特別留意合約、財務糾紛及重要關係的穩定性。</p>
+  <div class="analogy">逢酉的年份（例如庚酉、辛酉年），是你財運流通最順的時候，抓住這些窗口很重要。逢戌的年份，財務相關的事情要加倍謹慎，多確認細節，少貿然決策。</div>
+</div>
+
+<div class="card">
+  <div class="card-title">地支：辰辰自刑深析</div>
+  <p><strong style="color:#F07840;">辰辰自刑（年時首尾呼應）：</strong>自刑意味著同一能量的自我消耗。辰土自刑，辰中壬水（財星）在自刑中受損——你可能有一種習慣性的「把已經到手的機會再想一遍，然後錯過它」的模式。過度分析、猶豫不決，是辰辰自刑最常見的心理呈現。</p>
+  <p>同時辰為水庫，兩辰自刑有「水庫洩漏」之象——財務管理上需要注意：有賺到、但留存率不高；計畫制定了、但執行上有拖延或反覆。</p>
+  <div class="analogy">你偶爾會有「這件事我明明想好了，但還是沒有去做」的感覺。不是缺乏能力，是辰辰自刑帶來的反覆評估模式。練習「想好了就去做」，是打破這個模式最直接的方法。</div>
+</div>
+
+<div class="card">
+  <div class="card-title">地支：巳午未三會暗示（流年引動）</div>
+  <p><strong style="color:#E8C96B;">日支巳火，逢午未引動：</strong>日支巳與流年午、大運未，可構成巳午未三會火局——三會火局將大力強化火氣（正印），使日主再旺。逢此組合的年份（如逢午年，且大運在未時），需特別注意身強再旺、情緒衝動的風險。</p>
+  <p>月支未土本身已是偏財格核心，逢午未合時，偏財能量與火局能量交織——財與印同旺，機會增多但判斷容易被情緒影響。</p>
+  <div class="analogy">有些年份你會感覺機會特別多、能量特別滿，恨不得每件事都衝。這種時候最需要冷靜——選擇最重要的一件事做好，而不是十件事同時開始、全部做一半。</div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════ 伍：大運流年 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">伍</div>
+    <div>
+      <div class="section-title">大運流年交叉分析</div>
+      <div class="section-subtitle">LUCK PILLARS · ANNUAL STARS · CURRENT</div>
+    </div>
+  </div>
+
+  <div class="yunliu-grid">
+    <div class="yun-card">
+      <div class="yun-age">2歲起</div>
+      <div class="yun-stem fire-c">壬午</div>
+      <div class="yun-desc">壬水正財，午火偏印。財印並行，幼年家庭有財務資源，但偏印助旺日主，能量偏強。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">12歲起</div>
+      <div class="yun-stem metal-c">辛巳</div>
+      <div class="yun-desc">辛金食神，巳火正印。食神生財格局開始，青春期才華萌芽，巳火加強日主能量，能量充沛。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">22歲起</div>
+      <div class="yun-stem metal-c">庚辰</div>
+      <div class="yun-desc">庚金傷官，辰土財庫。傷官生財完整格局，22-32歲是才華最直接轉化為財務資源的黃金十年。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">32歲起</div>
+      <div class="yun-stem wood-c">己卯</div>
+      <div class="yun-desc">己土比肩，卯木七殺。比肩自我意識增強，七殺帶來外部挑戰，是磨礪格局、突破自我的重要大運。</div>
+    </div>
+    <div class="yun-card active">
+      <div class="yun-age">42歲起</div>
+      <div class="yun-stem wood-c">戊寅</div>
+      <div class="yun-desc">戊土劫財，寅木七殺。劫財與七殺並行，壓力與競爭同在，身旺能扛，但需注意財務流失與人際博弈。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">52歲起</div>
+      <div class="yun-stem fire-c">丁丑</div>
+      <div class="yun-desc">丁火偏印，丑土比肩。偏印生身（忌神方向），丑土凝濕，略緩燥熱，此運需主動泄秀，避免能量滯積。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">62歲起</div>
+      <div class="yun-stem water-c">丙子</div>
+      <div class="yun-desc">丙火正印，子水偏財。子水偏財入大運，財星之根穩固；丙印雖為忌，但子水制衡，整體是財務回暖的好運。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">72歲起</div>
+      <div class="yun-stem water-c">乙亥</div>
+      <div class="yun-desc">乙木七殺，亥水正財。財官（七殺）並見，晚年依然有清醒的事業心與財務意識，精神奕奕。</div>
+    </div>
+    <div class="yun-card">
+      <div class="yun-age">82歲起</div>
+      <div class="yun-stem earth-c">甲戌</div>
+      <div class="yun-desc">甲木正官，戌土比劫。官星入命，晚年有社會認可與體制接納，精神上得到安頓。</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="card-title">當前大運 戊寅（42歲起）｜深度解析</div>
+    <p><strong style="color:#E8C96B;">戊土劫財：</strong>劫財大運，自我主張達到頂峰，競爭意識強烈。正面：行動力極強，敢於在競爭中搶佔先機；負面：與他人的財務或資源邊界容易模糊，需要清晰劃定合作與競爭的界線。</p>
+    <p><strong style="color:#F07840;">寅木七殺：</strong>寅木為己土七殺，大運地支帶七殺，這個十年外部壓力明顯——可能來自競爭對手、市場環境、或人際關係中的強勢方。然身強之己土能夠承受七殺，壓力轉化為突破的動力，是「困境中反彈」的大運格局。</p>
+    <p><strong style="color:#E8C96B;">寅巳相刑：</strong>大運寅木與日支巳火構成相刑，日柱（最真實的自我宮）受到衝擊。這意味著42-52歲的這段時間，你可能在「我是誰、我真正想要什麼」這個問題上有深刻的重新審視，感情關係也可能有重大的調整。</p>
+    <div class="highlight-warn">
+      ⚠️ 戊寅大運核心提示：此運壓力大但能扛，關鍵是不要在壓力下做出破壞長期格局的短視決策。財務上保持紀律，關係上保持邊界，身體上定期檢查。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">2025 乙巳年｜流年解析</div>
+    <p><strong style="color:#E8C96B;">乙木流年（七殺）：</strong>乙木為己土七殺，七殺流年對身強日主是「有益制衡」。2025年你可能遇到真正挑戰你判斷力的情境——一個強勢的對手、一個打破現有格局的機遇、或一段需要你走出舒適圈的關係。對身強的己土而言，這種壓力反而是進化的觸發器。</p>
+    <p><strong style="color:#E8C96B;">巳火流年：</strong>流年巳火與日支巳火伏吟——日柱自我能量被疊加強化，你在2025年的存在感和主導欲達到高點。同時，巳火正印助旺日主（忌神方向），需注意情緒衝動和固執己見的傾向在這年會更明顯。</p>
+    <p>乙巳年與當前大運戊寅之間：寅巳相刑被流年巳火再度引動，日柱宮位受到雙重刺激。這一年在感情關係、合作關係、或自我定位上，可能有一個不得不面對的「選擇時刻」。</p>
+    <div class="highlight-gold">
+      ★ 2025最適合做的事：主動迎接挑戰而非回避、在壓力中尋找突破口、對重要關係做清晰的評估與定位。不適合：維持曖昧的財務合作關係、逃避重要決定。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">2026 丙午年｜流年解析</div>
+    <p><strong style="color:#F07840;">丙火流年（正印，忌神）：</strong>丙火正印對身強己土是忌神，正印流年再度加旺日主，是「火上加火」的格局。自我能量過旺的年份，最容易出現：主觀意識過強、聽不進不同意見、在情緒驅動下做出衝動決策。</p>
+    <p><strong style="color:#F07840;">午火流年：</strong>午火同為正印，且午火在五行中是火氣最旺的地支。流年丙午與命局巳火相鄰（巳午半合火趨勢），火旺再旺。然午火同時是癸水偏財的剋星——流年午火剋月干癸水（格局核心），2026年偏財格的能量受到壓制，財務機會感可能不如2025年明顯。</p>
+    <div class="highlight-warn">
+      ⚠️ 2026年三大核心警示：<br>
+      ① 財務決策務必謹慎，避免火旺衝動下的大額投資或擔保；<br>
+      ② 情緒管理是首要任務，火旺易怒，說出去的話很難收回；<br>
+      ③ 健康上留意火旺相關症狀（心臟、血壓、皮膚炎症），增加有氧運動與水分攝取。
+    </div>
+    <div class="analogy">2026年就像你的內在能量被調到了最大音量——什麼都感覺很強烈，情緒、欲望、判斷。這時候最需要的不是更多行動，而是暫停、深呼吸、再決定。最好的決策往往是在平靜中做出的，不是在高峰時做出的。</div>
+  </div>
+</section>
+
+<!-- ════ 陸：神煞 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">陸</div>
+    <div>
+      <div class="section-title">神煞解讀</div>
+      <div class="section-subtitle">DIVINE STARS · AUSPICIOUS · INAUSPICIOUS</div>
+    </div>
+  </div>
+
+  <div class="shensha-grid">
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#E8C96B;">天乙貴人</div>
+      <div class="shensha-desc">己土天乙貴人見子申。本命四柱無子申，天乙貴人未入命，但大運62歲起進入丙子——子水入大運地支，天乙貴人在62歲後正式啟動，是晚年貴人運最強的階段。在此之前，逢子年（壬子、癸子）時貴人能量短暫激活。2032壬子年是近期貴人能量的重要窗口。</div>
+    </div>
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#9BC46A;">文昌貴人</div>
+      <div class="shensha-desc">己土文昌在酉。本命無酉，但逢酉年（2029庚酉年）文昌臨門，學習、考試、寫作、教學相關的機遇在酉年格外突出。傷官（庚金）與文昌（酉金）同為金系，你的才華批判力與文昌學習力共振，知識型輸出是你最自然的表達路徑。</div>
+    </div>
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#7BB8E8;">驛馬</div>
+      <div class="shensha-desc">申子辰合水局見寅為驛馬。本命辰土兩見（年支、時支），逢寅年驛馬被激烈引動——當前大運戊寅，驛馬大運地支！這意味著42-52歲這個大運是你一生中移動最頻繁、環境改變最多的十年。每次移動背後往往是機遇，不要因為習慣穩定而錯過這股流動能量。</div>
+    </div>
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#FFB8A0;">桃花</div>
+      <div class="shensha-desc">子午卯酉為桃花。本命四柱無桃花入命，但月支未中藏乙木，乙木為感情線索之一。整體感情桃花能量在流年酉（辰酉合金，感情機緣）或逢子（天乙貴人）時較為活躍。你的感情緣分較多通過工作、財務往來或共同利益的場合認識，而非純粹的社交桃花。</div>
+    </div>
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#F07840;">羊刃</div>
+      <div class="shensha-desc">己土羊刃在午。本命無午，羊刃未入命，性格上沒有直接的剛烈衝動特質。然傷官（庚金）在年干，傷官本身帶有「突破規範」的銳氣，功能上與羊刃有相似的「敢衝」能量。大運22-32歲庚辰，庚金傷官旺地，那段時期是你「最敢說、最敢衝」的人生窗口。</div>
+    </div>
+    <div class="shensha-item">
+      <div class="shensha-name" style="color:#D4C5A0;">魁罡</div>
+      <div class="shensha-desc">魁罡貴人見庚辰、庚戌、壬辰、壬戌。本命年柱庚辰——魁罡入年柱！魁罡主：孤傲、強勢、自我要求極高、聰慧而有煞氣。魁罡在年柱，從小就有強烈的自我標準，不容易被說服，也不容易認輸。這股力量是你成就的來源，也是你在人際關係中需要「有意識軟化」的地方。</div>
+    </div>
+  </div>
+
+  <div class="analogy" style="margin-top:24px;">
+    你年柱坐魁罡（庚辰），這是命理中極強的能量符號——聰明、強勢、自我要求高、有一種天然的「我說了算」氣場。魁罡格女命，往往在事業上成就斐然，但在親密關係中需要刻意學習「讓對方也有空間」。你的強大是禮物，不是問題，關鍵是用在對的地方。
+  </div>
+</section>
+
+<!-- ════ 柒：稱骨訣 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">柒</div>
+    <div>
+      <div class="section-title">稱骨訣·先天能量解讀</div>
+      <div class="section-subtitle">BONE WEIGHT · INNATE CAPACITY · SOFTWARE UPGRADE</div>
+    </div>
+  </div>
+
+  <div class="bone-display">
+    <div>
+      <div class="bone-num">4<span class="bone-unit">兩</span>5<span class="bone-unit">錢</span></div>
+    </div>
+    <div class="bone-text">
+      <p>《袁天罡稱骨歌》4兩5錢：「一生福祿豐厚，中年大展，財運亨通，晚景安泰」——這是本系列解讀中骨重最高的命盤，先天能量配備屬於<strong style="color:#C9A84C;">高配等級</strong>。</p>
+      <p>4兩5錢意味著：你帶來這個世界的先天能量濃度非常充足，無論從哪個層面起步，都有足夠的底氣去走出屬於自己的路。這不是說人生沒有挑戰，而是你應對挑戰的「出廠設備」比大多數人都更完整。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">骨重 4兩5錢 × 偏財格身強的人生質地</div>
+    <p>偏財格配合最高骨重，最佳路線是：<strong style="color:#E8C96B;">才華（傷官庚金）→流通（偏財癸水）→影響力→財富積累</strong>。這是一條靠「眼光、連結、執行力」走出來的路，而不是靠資本或背景。</p>
+    <p>4兩5錢的先天配備，加上魁罡（庚辰）的聰慧強勢，加上傷官生財的能量鏈，你天生就有「把事情做大」的能力。問題從來不是「你有沒有能力」，而是「你有沒有找到對的方向，讓能量真正流動起來」。</p>
+    <p>對照辰辰自刑的心理模式提醒：先天配備再好，如果反覆評估、裹足不前，也會讓高配硬體跑低配效能。你最需要升級的「軟體」是：<strong style="color:#E8C96B;">行動力與決策速度</strong>。</p>
+    <div class="analogy">你是那種出廠就帶最新處理器、最大記憶體的旗艦機型。別人在想「我夠不夠好」的時候，你的問題是「我要跑什麼APP」。選對了方向，你的硬體會讓你跑得比任何人都快。別讓優秀的你，困在「再想想」的迴圈裡。</div>
+  </div>
+</section>
+
+<!-- ════ 結語 ════ -->
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">🔴</div>
+    <div>
+      <div class="section-title">當前最值得把握的機會＋最需警惕的地雷</div>
+      <div class="section-subtitle">NOW · OPPORTUNITY · WARNING</div>
+    </div>
+  </div>
+
+  <div class="oppo-box">
+    <h3>🌱 當前最值得把握的機會（2025–2026）</h3>
+    <ul>
+      <li><strong>戊寅大運·驛馬激活——移動即機會：</strong>當前大運地支寅木為驛馬，42-52歲是你一生中流動性最強、環境改變最多的十年。每一次移動（出行、遷居、跨界合作、開拓新市場）都可能是財運的觸發點。不要因為習慣穩定而拒絕流動，「動」是這個大運給你最大的禮物。</li>
+      <li><strong>傷官生財的才華路線正當其時：</strong>22-32歲庚辰大運是你傷官生財能量最純粹的時段，而40歲後的你帶著那段時間積累的才華與判斷力再出發——把批判性思維、改革能力、創新眼光轉化成實際的商業或職業價值。你的「敢說敢做」本身就是稀缺的競爭力。</li>
+      <li><strong>2025乙巳年·壓力是升級的機會：</strong>七殺流年對身強的你是禮物。主動迎接那個讓你不舒服的挑戰，它是偽裝成阻礙的成長觸發器。身強魁罡的你，從不缺面對壓力的能力，缺的只是「願意讓壓力推動你而不是只是承受它」的心態調整。</li>
+      <li><strong>62歲起丙子大運·布局晚年的天乙貴人：</strong>子水天乙貴人在大運地支，晚年貴人運將大幅提升。現在就可以開始投資長期關係——那些現在看起來只是「朋友」的人，在62歲後可能成為你最重要的貴人。長期關係的積累，是你晚年最大的資產。</li>
+      <li><strong>魁罡庚辰的聰慧氣質——知識與決策是你的核心資產：</strong>魁罡格的人最強的競爭力是判斷力和執行力。把你對「哪裡有問題、怎麼能做得更好」的直覺，系統化地轉化成可交付的解決方案，是你最穩定的財富創造路徑。</li>
+    </ul>
+  </div>
+
+  <div class="warning-box">
+    <h3>⚡ 最需警惕的地雷</h3>
+    <ul>
+      <li><strong>辰辰自刑·「再想想」的無盡迴圈：</strong>這是你先天最大的能量洩漏點。你有極強的分析能力，但過度分析等於不行動。對自己設一個規則：重要決策給自己最多48小時，想清楚就執行，不再反覆。4兩5錢的先天能量不應該消耗在猶豫裡。</li>
+      <li><strong>2026丙午年·火旺忌神衝頂，財務決策要極度保守：</strong>正印雙疊（丙午）是你命盤最危險的流年組合之一——火旺克水（偏財受損）、情緒衝動（印旺）、固執己見（身強再旺）三重疊加。這一年：不簽大合約、不做大投資、不在情緒激動時說重要的話、不輕易打破已有的穩定格局。</li>
+      <li><strong>戊寅大運·劫財奪財的人際邊界：</strong>大運劫財（戊土）意味著這個十年容易出現「資源被他人消耗」的情況——可能是合夥財務糾紛、被人情綁架的決策、或者因為太強勢而推走了本可合作的人。清晰的邊界和書面合約是這個大運你最重要的財務防護。</li>
+      <li><strong>魁罡氣場在親密關係中的挑戰：</strong>魁罡年柱的女命，在感情中容易讓對方感到壓力。你的強大本身不是問題，問題是「對方有沒有足夠的空間做自己」。刻意在關係中練習「讓對方說」「讓對方決定」，不是軟弱，是智慧——也是讓你吸引到真正對等伴侶的最直接方法。</li>
+      <li><strong>身強火土旺·長期燥熱的健康隱患：</strong>命局燥熱，長期在高壓環境下工作，最容易出現的身體信號：心血管、腸胃（土旺）、皮膚（火旺）相關問題。定期健康檢查，增加有氧運動，攝取充足水分，接近水邊環境——都有實際的命局調和效果。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════ 終章 ════ -->
+
+<div class="verdict">
+  <div class="verdict-main">己土厚德</div>
+  <div class="verdict-text">
+    你是一片承載萬物的大地，<br>
+    豐厚、有力、天生就懂得如何讓種子發芽。<br>
+    你不缺養分，你缺的是讓養分流動的勇氣。<br><br>
+    傷官生財的天賦告訴你：<br>
+    你的批判是創造，你的標準是財富，<br>
+    你的不安分，是這個世界需要的改變力量。<br><br>
+    魁罡的你天生強大，<br>
+    但最強的大地，是那片懂得接納雨水的土地——<br>
+    讓自己接受滋潤，讓能量真正流動起來，<br>
+    那一刻，你才真正活成了4兩5錢的完整版本。<br><br>
+    <em style="color:#C9A84C;font-size:0.9rem;">五行不是神明在審判，是能量在流動。八字告訴你的，不是你的命，是你天生習慣用哪一種電路在運作。知道了，你就可以選擇要不要升級線路。</em>
+  </div>
+  <div class="verdict-seal">命盤深度解讀</div>
+</div>
+
+</div>
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card, .yun-card, .shensha-item, .warning-box, .oppo-box, .bone-display').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
